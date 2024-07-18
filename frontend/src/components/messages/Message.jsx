@@ -10,7 +10,7 @@ const Message = ({ message }) => {
 	const chatClassName = fromMe ? "chat-end" : "chat-start";
 	const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
 	const bubbleBgColor = fromMe ? "bg-stone-600" : "";
-
+	const ShakeClass = message.shouldShake? "shake": ""
 	
 
 	return (
@@ -22,8 +22,13 @@ const Message = ({ message }) => {
 			</div>
 
       
+<<<<<<< Updated upstream
 			<div className={`chat-bubble text-white  ${bubbleBgColor} pb-2  `}>{message.message}</div>
 			<div className='chat-footer opacity-50 text-xs flex gap-1 items-center text-white'>{formattedTime}</div>
+=======
+			<div className={`chat-bubble text-white  ${bubbleBgColor} ${ShakeClass} pb-2  `}>{message.message}</div>
+			<div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>{formattedTime}</div>
+>>>>>>> Stashed changes
 		</div>
 	);
 };
